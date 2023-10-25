@@ -18,8 +18,11 @@
 # Топология
 ![2023-10-25_13-57-07](https://github.com/IvanTumanov123/demo2024/assets/148867523/39edd56f-da00-4eac-a9a7-040a92ba4080)
 
-Затем я устанавливаю IP адреса на интерфейсы 
-
+Далее я захожу в файл конфигурации 
+```
+nano /etc/network/interfaces
+```
+И ввожу следующее:
 ```
 auto ens192
 iface ens192 inet static
