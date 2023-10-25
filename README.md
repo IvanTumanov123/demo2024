@@ -46,3 +46,19 @@ netmask 255.255.255.252
 ```
 apt-get install frr
 ```
+Проверил его состояние
+```
+systemctl status frr
+```
+Далее я ввожу
+```
+vtysh
+```
+И ввожу данные команды
+```
+conf t
+router ospf
+ ospf router-id 192.168.1.1
+ network 192.168.1.160/30 area 0
+ network 192.168.2.164/30 area 0
+```
