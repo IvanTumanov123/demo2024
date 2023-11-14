@@ -50,6 +50,18 @@ apt-get install frr
 ```
 systemctl status frr
 ```
+После я захожу в
+```
+nano /etc/frr/daemons
+```
+И меняю значение
+```
+ospfd=yes
+```
+ После чего я перезагружаю FRR
+ ```
+systemctl restart frr
+```
 Далее я ввожу
 ```
 vtysh
@@ -61,4 +73,8 @@ router ospf
  ospf router-id 192.168.1.1
  network 192.168.1.160/30 area 0
  network 192.168.2.164/30 area 0
+```
+После чего смотрю соседей
+```
+show ip ospf neighbor
 ```
