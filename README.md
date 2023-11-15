@@ -103,3 +103,32 @@ passwd: пароль успешно обновлён
 ![image](https://github.com/IvanTumanov123/demo2024/assets/148867523/c3f8f59f-e638-4c5a-8e82-c627581ea987)
 
 **Такие же действия я повторил и с другими виртуальными машинами.**
+
+# №1.3
+Сначала я устанавливаю сервер на виртуальную машину ISP
+```
+apt install isc-dhcp-server
+```
+Далее я захожу в 
+```
+nano /etc/default/isc-dhcp-server
+```
+И в строке INTERFACESv4="" ставлю интерфейс, который идёт к интернету
+```
+INTERFACESv4="ens192"
+```
+Далее я захожу в конфигурационный файл
+```
+nano /etc/dhcp/dhcpd.conf
+```
+И вписываю следующее
+```
+subnet 192.168.0.0 netmask 255.255.255.0
+range 192.168.0.2 192.168.0.125
+option domain-name-server 8.8.8.8, 8.8.4.4
+option routers 192.168.0.1
+```
+После этого я перезагружаю сервер и сохраняю изменения
+```
+systemctl restart isc-dhcp-server.service
+```
