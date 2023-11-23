@@ -185,3 +185,4 @@ crontab -e
 cd /etc/backup
 ls -a
 ```
+# №1.7
