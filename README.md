@@ -170,7 +170,18 @@ apt-get install rsync
 ```
 Далее я создаю каталог для сохраниения Backup-ов
 ```
-mkdir /etc/frr/backup
+mkdir /etc/backup
 ```
-
-
+Далее
+```
+crontab -e
+```
+И ввожу 
+```
+0 0 * * * rsync -avzh /etc/frr/frr.conf /etc/backup
+```
+Далее я проверяю
+```
+cd /etc/backup
+ls -a
+```
