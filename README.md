@@ -199,3 +199,12 @@ ls -a
 ```
 apt-get install openssh-server
 ```
+Далее я включаю его и проверяю состояние
+```
+systemctl start ssh
+systemctl status ssh
+```
+После чего я подключаюсь по SSH HQ-SRV
+```
+ssh ivan@192.168.0.2
+```
